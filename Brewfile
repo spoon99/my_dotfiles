@@ -36,6 +36,6 @@ cask 'vagrant'
 
 cask 'java'
 
-cask 'intellij-idea
+cask 'intellij-idea'
 cask 'rubymine'
 cask 'pycharm'

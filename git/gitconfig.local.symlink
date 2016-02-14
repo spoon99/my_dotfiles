@@ -1,0 +1,5 @@
+[user]
+        name = spoon
+        email = shkim84@coupang.com
+[credential]
+        helper = osxkeychain
