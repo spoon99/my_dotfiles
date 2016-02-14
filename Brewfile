@@ -15,6 +15,8 @@ brew 'wget'
 brew 'git'
 brew 'icu4c'
 brew 'python'
+brew 'htop'
+brew 'mysql'
 
 cask '1password'
 cask 'alfred'
@@ -33,7 +35,7 @@ cask 'virtualbox'
 cask 'virtualbox-extension-pack'
 cask 'dockertoolbox'
 cask 'vagrant'
-
+cask 'karabiner'
 cask 'java'
 
 cask 'intellij-idea'
