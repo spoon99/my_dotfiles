@@ -37,7 +37,7 @@ cask 'dockertoolbox'
 cask 'vagrant'
 cask 'karabiner'
 cask 'java'
-
+cask 'mysqlworkbench'
 cask 'intellij-idea'
 cask 'rubymine'
 cask 'pycharm'
