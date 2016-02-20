@@ -13,7 +13,6 @@ alias dt="cd ~/Desktop"
 alias p="cd ~/projects"
 alias g="git"
 alias h="history"
-alias j="jobs"
 
 # IP addresses
 alias localip="ipconfig getifaddr en0"
@@ -31,7 +30,7 @@ alias conn='~/scripts/deploy.exp'
 alias conngit='~/scripts/gitlab.exp'
 alias va='source venv/bin/activate'
 alias eh='sudo vim /etc/hosts'
-alias ea='vim ~/.aliases'
+alias ea='vim ~/.dotfiles/.aliases'
 alias ez='vim ~/.zpreztorc'
 alias bfg='java -jar ~/bfg/bfg.jar'
 alias de='eval "$(docker-machine env default)"'
