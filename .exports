@@ -1,3 +1,0 @@
-export CMDB_URL='http://cmdb.coupang.net'
-export JAVA_HOME=/Library/java/home
-export ZSH=~/.dotfiles/

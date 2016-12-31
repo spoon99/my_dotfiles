@@ -25,6 +25,7 @@ zstyle ':prezto:*:*' color 'yes'
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
+  'git' \
   'terminal' \
   'editor' \
   'history' \
@@ -35,7 +36,6 @@ zstyle ':prezto:load' pmodule \
   'fasd' \
   'ruby' \
   'rsync' \
-  'git' \
   'prompt'
 
 #
