@@ -46,3 +46,7 @@ cask 'wireshark'
 cask 'visual-studio-code'
 cask 'clipy'
 cask 'jetbrains-toolbox'
+cask 'numi'
+cask 'gpgtools'
+cask 'charles'
+
