@@ -33,9 +33,10 @@ alias conn='~/scripts/deploy.exp'
 alias conngit='~/scripts/gitlab.exp'
 alias va='source venv/bin/activate'
 alias eh='sudo vim /etc/hosts'
-alias ea='vim ~/.dotfiles/.aliases'
-alias ez='vim ~/.zpreztorc'
-alias bfg='java -jar ~/bfg/bfg.jar'
+alias ea='vim ~/.dotfiles/system/aliases.zsh'
+alias ez='vim ~/.dotfiles/prezto/zshrc.symlink'
+
+# Docker for Jetbrains
 alias ds='socat -d -d TCP-L:8099,fork UNIX:/var/run/docker.sock 1>/dev/null &'
 
 # One of @janmoesen’s ProTip™s

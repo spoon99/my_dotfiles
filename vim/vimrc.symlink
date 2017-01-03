@@ -90,7 +90,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " Initialize plugin system
 call plug#end()
 

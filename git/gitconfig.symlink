@@ -19,7 +19,7 @@
         ui = true
 [core]
 	excludesfile = /Users/spoon/.gitignore
-        editor = vim
+    editor = vim
 	autocrlf = input
 [apply]
         whitespace = nowarn
@@ -35,6 +35,3 @@
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
-[user]
-	name = spoon(Sung Ho Kim) 
-	email = shkim84@coupang.com
