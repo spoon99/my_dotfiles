@@ -26,6 +26,7 @@ zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:load' pmodule \
   'environment' \
   'git' \
+  'ssh' \
   'terminal' \
   'editor' \
   'history' \
@@ -36,6 +37,7 @@ zstyle ':prezto:load' pmodule \
   'fasd' \
   'ruby' \
   'rsync' \
+  'python' \
   'prompt'
 
 #
@@ -43,7 +45,7 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'emacs'
+zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -91,6 +93,10 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'pure'
 
+function prompt_name_setup {
+  PROMPT='$python_info[virtualenv] %m%# '
+  RPROMPT=''
+}
 #
 # Ruby
 #
@@ -113,7 +119,7 @@ zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
 #
 
 # Set the SSH identities to load into the agent.
-# zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'operation.pem' 'catalina_aws_ec2_key'
 
 #
 # Syntax Highlighting
@@ -159,3 +165,8 @@ zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
 
 # Integrate with iTerm2.
 #zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
+#
+# Python
+# 
+zstyle ':prezto:module:python:info:virtualenv' format 'virtualenv:%v'
