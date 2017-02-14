@@ -63,7 +63,9 @@ set title
 set showcmd
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
-
+" whitespace
+set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
+set list
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
@@ -91,6 +93,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'fatih/vim-go'
 " Initialize plugin system
 call plug#end()
 

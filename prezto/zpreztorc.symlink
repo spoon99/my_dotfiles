@@ -26,7 +26,6 @@ zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:load' pmodule \
   'environment' \
   'git' \
-  'ssh' \
   'terminal' \
   'editor' \
   'history' \
@@ -38,6 +37,7 @@ zstyle ':prezto:load' pmodule \
   'ruby' \
   'rsync' \
   'python' \
+  'syntax-highlighting' \
   'prompt'
 
 #
@@ -85,6 +85,11 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 # zstyle ':prezto:module:pacman' frontend 'yaourt'
 
 #
+# Python
+#
+zstyle ':prezto:module:python:info:virtualenv' format 'virtualenv:%v'
+
+#
 # Prompt
 #
 
@@ -103,6 +108,11 @@ function prompt_name_setup {
 
 # Auto switch the Ruby version on directory change.
 zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
+
+# Theme for ruby
+# %v - ruby version.
+zstyle ':prezto:module:ruby:info:version' format 'version:%v'
+
 
 #
 # Screen
@@ -127,18 +137,12 @@ zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'operation.pem' 'catalina_a
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'cursor' \
-#   'root'
-#
-# Set syntax highlighting styles.
-# zstyle ':prezto:module:syntax-highlighting' styles \
-#   'builtin' 'bg=blue' \
-#   'command' 'bg=blue' \
-#   'function' 'bg=blue'
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+   'main' \
+   'brackets' \
+   'pattern' \
+   'cursor' \
+   'root'
 
 #
 # Terminal
@@ -164,9 +168,5 @@ zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'operation.pem' 'catalina_a
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
-#zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 
-#
-# Python
-# 
-zstyle ':prezto:module:python:info:virtualenv' format 'virtualenv:%v'

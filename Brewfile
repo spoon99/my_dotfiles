@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
+tap 'caskroom/fonts'
 
 brew 'ack'
 brew 'coreutils'
@@ -23,6 +24,8 @@ brew 'jq'
 brew 'spaceman-diff'
 brew 'tmux'
 brew 'tree'
+brew 'docker-machine'
+brew 'terraform'
 
 cask '1password'
 cask 'alfred'
@@ -50,4 +53,4 @@ cask 'clipy'
 cask 'jetbrains-toolbox'
 cask 'numi'
 cask 'gpgtools'
-
+cask 'font-fira-code'

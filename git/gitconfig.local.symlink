@@ -1,5 +1,3 @@
 [user]
-        name = spoon (Sung Ho Kim)
+        name = Spoon(김성호)
         email = shkim84@coupang.com
-[credential]
-        helper = osxkeychain
