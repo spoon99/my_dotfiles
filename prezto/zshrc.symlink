@@ -52,3 +52,10 @@ unset config_files
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=$HOME/go/bin:$PATH
+
+# AWS CLI helper
+function ec2() {
+	aws --profile=$1 ec2 describe-instances --filters "Name=tag:Name,Values=$2*" | jq -c '.Reservations[].Instances | .[].PrivateIpAddress, .[].Tags'
+}

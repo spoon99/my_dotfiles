@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='atom -nw'
-export VISUAL='atom -nw'
+export EDITOR='code -nw'
+export VISUAL='code -nw'
 export PAGER='less'
 
 #
