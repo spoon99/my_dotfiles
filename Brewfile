@@ -29,7 +29,7 @@ brew 'fzf'
 brew 'lnav'
 brew 'yarn'
 brew 'awscli'
-brew 'pt'
+brew 'ripgrep'
 
 cask '1password'
 cask 'alfred'
