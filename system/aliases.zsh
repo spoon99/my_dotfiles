@@ -35,12 +35,21 @@ alias conngit='~/scripts/gitlab.exp'
 alias va='source venv/bin/activate'
 alias eh='sudo vim /etc/hosts'
 alias ea='vim ~/.dotfiles/system/aliases.zsh'
+alias eg='code -n ~/.gitconfig'
 alias ez='vim ~/.dotfiles/prezto/zshrc.symlink'
 
-# Docker for Jetbrains
-alias ds='socat -d -d TCP-L:8099,fork UNIX:/var/run/docker.sock 1>/dev/null &'
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
+
+# kube
+alias startkube='minikube start --vm-driver=xhyve' 
+# mobile
+alias android='/Users/shkim84/Library/Android/sdk/emulator/emulator -avd Nexus_5_API_28 -netdelay none -netspeed full'
+# coupang
+alias rsc="sudo ps -ef | grep -v "grep" | grep "ForeScout SecureConnector -daemon" | awk {'print $2'} | xargs sudo kill"
+
+## Proxy
+alias chrome_proxy="open -n -a 'Google Chrome' --args --proxy-server=http://`{ipconfig getifaddr en0}`:8888 --user-data-dir='/tmp/chrome_dev_test'"

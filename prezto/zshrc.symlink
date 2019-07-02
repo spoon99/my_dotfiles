@@ -59,3 +59,6 @@ export PATH=$HOME/go/bin:$PATH
 function ec2() {
 	aws --profile=$1 ec2 describe-instances --filters "Name=tag:Name,Values=$2*" | jq -c '.Reservations[].Instances | .[].PrivateIpAddress, .[].Tags'
 }
+
+# JENV
+eval "$(jenv init -)"
