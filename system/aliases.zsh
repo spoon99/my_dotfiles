@@ -38,7 +38,7 @@ alias ea='vim ~/.dotfiles/system/aliases.zsh'
 alias ez='vim ~/.zpreztorc'
 alias ezz='vim ~/.zshrc'
 alias eg='code -n ~/.gitconfig'
-
+alias uz='cd ~/.zprezto;git pull;git pull --recurse-submodules'
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
