@@ -89,6 +89,7 @@ zstyle ':prezto:module:history-substring-search' globbing-flags ''
 # Python
 #
 zstyle ':prezto:module:python:info:virtualenv' format 'virtualenv:%v'
+zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
 
 #
 # Prompt
