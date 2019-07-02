@@ -1,43 +1,97 @@
 # Local/private config goes in the include
 [include]
-        path = ~/.gitconfig.local
+    path = ~/.gitconfig.local
+
 [hub]
-        protocol = https
-[alias]
-        co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributors = !$ZSH/bin/git-rank-contributors
-        count   = !git shortlog -sn
-		lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-		lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-		lg = !"git lg1"
+    protocol = https
+
+[alias] ## https://johngrib.github.io/wiki/git-alias/
+    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    b0 = "!git branch | awk '/^\\*/{print $2}'"
+    back = "!git branch backup-`git b0`"
+    ch = "!git checkout $(git branch -vv | grep -v '^\\*' | fzf | awk '{print $1}')"
+    s = status -s
+    a = "!git add $(git status -s | fzf -m | awk '{print $2}')"
+    squash = "!git merge $(git branch --no-merged | fzf --preview \"git l {1} \") --squash -Xignore-space-change"
+    co = checkout
+    count   = !git shortlog -sn
+    ## Helper
+    alias = "!# Prints all aliases.;\n\
+        git config --list | egrep '^alias.+' | sed -e 's/^alias\\.//' | sed -e 's/^[^=]*=/\\'$'\\033[31m&\\033[(B\\033[m/' | column -t -s'=' | sed 's/!#* *//; s/;$//' | cut -c1-85"
+    ## Branch
+    branch-list = "!# List the branches.;\n\
+        git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD) %(refname:short)|%(committerdate:relative)|%(authorname)' \
+        | column -ts'|' \
+        | sed 's/^ /./'"
+    bb = "!# Branch tools. Type 'git bb help'.;\n\
+        f() { \n\
+            if [ $# = 0 ]; then \
+                git branch-select | xargs git checkout; \
+            elif [ $1 = 'help' ]; then \
+                echo 'git bb           : Select and checkout branch'; \
+                echo 'git bb c, clean  : Clean all merged branches'; \
+                echo 'git bb d, D      : Delete seleted branches(D: force)'; \
+                echo 'git bb l, list   : List branches excluding the current branch'; \
+                echo 'git bb m, merged : List merged branches excluding the current and master branches'; \
+            elif [ $1 = 'd' -o $1 = 'D' ]; then \
+                git branch -$1 $(git bb list | fzf -m | awk '{print $2}'); \
+            elif [ $1 = 'clean' -o $1 = 'c' ]; then \
+                git branch-clean; \
+            elif [ $1 = 'list' -o $1 = 'l' ]; then \
+                git branch-list; \
+            elif [ $1 = 'merged' -o $1 = 'm' ]; then \
+                git branch-merged; \
+            elif [ $1 = 'select' -o $1 = 's' ]; then \
+                git branch-select; \
+            else \
+                git bb help; \
+            fi; \
+        }; f"
+    b-l = "!git branch-list"
+    branch-merged = "!# List the merged branches.;\n\
+        git branch --merged | grep -v '^\\*\\|\\<master$'"
+    branch-select = "!# Select a branch.;\n\
+        f() { \
+            _height=$(stty size | awk '{print $1}');\
+            git branch-list | fzf --preview \"git l {2} | head -n $_height\" | awk '{print $2}'; \
+        }; f"
+    b-s = "!git branch-select"
+
+
 [color]
-        diff = auto
-        status = auto
-        branch = auto
-        ui = true
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+
 [core]
-	excludesfile = /Users/spoon/.gitignore
-    editor = vim
-	autocrlf = input
+    excludesfile = /Users/spoon/.gitignore
+    editor = code
+    autocrlf = input
+
 [apply]
-        whitespace = nowarn
+    whitespace = nowarn
+
 [mergetool]
-        keepBackup = false
+    keepBackup = false
+
 [difftool]
-        prompt = false
+    prompt = false
+
 [help]
-        autocorrect = 1
+    autocorrect = 1
+
 [push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
-        default = simple
+    # See `git help config` (search for push.default)
+    # for more information on different options of the below setting.
+    #
+    # Setting to git 2.0 default to suppress warning message
+    default = simple
+
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
+
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true

@@ -10,3 +10,13 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+# Global Project Home
+export MY_PROJECT_HOME="$HOME/projects"
+
+# Python - Virtualenvwrapper
+export PROJECT_HOME="$HOME/py_projects"
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+
+# Gradle
+export GRADLE_HOME=/usr/local/opt/gradle/libexec

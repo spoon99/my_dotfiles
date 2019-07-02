@@ -36,12 +36,17 @@ alias va='source venv/bin/activate'
 alias eh='sudo vim /etc/hosts'
 alias ea='vim ~/.dotfiles/system/aliases.zsh'
 alias ez='vim ~/.zpreztorc'
-alias ezz='vim ~/.dotfiles/prezto/zshrc.symlink'
+alias ezz='vim ~/.zshrc'
+alias eg='code -n ~/.gitconfig'
 
-# Docker for Jetbrains
-alias ds='socat -d -d TCP-L:8099,fork UNIX:/var/run/docker.sock 1>/dev/null &'
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
 done
+
+# kube
+alias startkube='minikube start --vm-driver=xhyve' 
+
+# mobile
+alias android='/Users/shkim84/Library/Android/sdk/emulator/emulator -avd Nexus_5_API_28 -netdelay none -netspeed full'

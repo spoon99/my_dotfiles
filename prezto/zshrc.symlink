@@ -57,5 +57,7 @@ function ec2() {
 	aws --profile=$1 ec2 describe-instances --filters "Name=tag:Name,Values=$2*" | jq -c '.Reservations[].Instances | .[].PrivateIpAddress, .[].Tags'
 }
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# JENV
+eval "$(jenv init -)"
