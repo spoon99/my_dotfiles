@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='code -nw'
-export VISUAL='code -nw'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
 
 #
