@@ -61,3 +61,7 @@ function ec2() {
 
 # JENV
 eval "$(jenv init -)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/spoon/.sdkman"
+[[ -s "/Users/spoon/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/spoon/.sdkman/bin/sdkman-init.sh"

@@ -40,7 +40,7 @@ alias et='vim ~/.tmux.conf'
 alias ezz='vim ~/.zshrc'
 alias eg='code -n ~/.gitconfig'
 alias uz='cd ~/.zprezto;git pull;git pull --recurse-submodules'
-
+alias eb='vim ~/.dotfiles/Brewfile'
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	alias "$method"="lwp-request -m '$method'"
