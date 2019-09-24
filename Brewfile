@@ -41,9 +41,6 @@ cask 'sourcetree'
 cask 'istat-menus'
 cask 'docker'
 cask 'karabiner-elements'
-cask 'java'
-cask 'java8'
-cask 'mysqlworkbench'
 cask 'visual-studio-code'
 cask 'clipy'
 cask 'jetbrains-toolbox'
@@ -54,6 +51,7 @@ cask 'logitech-options'
 cask 'bartendar'
 cask 'gitkraken'
 cask 'wireshark'
+cask 'spotify'
 
 mas "kakaotalk", id: 869223134
 mas "Magnet", id: 441258766
