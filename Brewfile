@@ -1,17 +1,12 @@
 cask_args appdir: '/Applications'
 
-tap 'caskroom/cask'
 tap 'homebrew/cask-drivers'
-tap 'caskroom/versions'
 tap 'homebrew/bundle'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
 
 brew 'ack'
 brew 'coreutils'
 brew 'grc'
 brew 'openssl'
-brew 'jenv'
 brew 'nvm'
 brew 'wget'
 brew 'git'
@@ -52,7 +47,9 @@ cask 'bartendar'
 cask 'gitkraken'
 cask 'wireshark'
 cask 'spotify'
+cask 'gpg-suite'
 
 mas "kakaotalk", id: 869223134
 mas "Magnet", id: 441258766
 mas "Ampetamine", id: 937984704
+
