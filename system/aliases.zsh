@@ -47,7 +47,8 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 done
 
 # kube
-alias startkube='minikube start --vm-driver=xhyve' 
+alias k=kubectl
+alias bt=boltcfg
 
 # mobile
-alias android='/Users/shkim84/Library/Android/sdk/emulator/emulator -avd Nexus_5_API_28 -netdelay none -netspeed full'
+alias android='/Users/shkim84/Library/Android/sdk/emulator/emulator -avd `/Users/shkim84/Library/Android/sdk/emulator/emulator -list-avds | fzf` -netdelay none -netspeed full'

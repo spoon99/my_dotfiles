@@ -65,7 +65,7 @@
     ui = true
 
 [core]
-    excludesfile = /Users/spoon/.gitignore
+	excludesfile = /Users/shkim84/.gitignore_global
     editor = vim
     autocrlf = input
 
@@ -89,12 +89,12 @@
     default = simple
 
 [difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path = 
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 
 [mergetool "sourcetree"]
-    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 
 [http]
     sslVerify = false

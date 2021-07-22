@@ -45,24 +45,27 @@ done
 
 unset config_files
 
-# AWS completion
-#source /usr/local/bin/aws_zsh_completer.sh
-
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
-# AWS CLI helper
-function ec2() {
-	aws --profile=$1 ec2 describe-instances --filters "Name=tag:Name,Values=$2*" | jq -c '.Reservations[].Instances | .[].PrivateIpAddress, .[].Tags'
-}
-
+# fuzzyfinder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# JENV
-eval "$(jenv init -)"
-
+## kube
+source <(kubectl completion zsh)
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="${HOME}/.sdkman"
 [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
 
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+
+## CDS helper
+function cds() {
+	local cassandra_name=`cat /Users/shkim84/projects/cds/cassandra_list.txt | fzf`
+	echo "Fetching ip for $cassandra_name"
+	http "https://consul-storage-service-consul-https-https.coupang.net/v1/kv/cassandra/${cassandra_name}.ips?raw"
+}
+
+## Krew
+export PATH="${PATH}:${HOME}/.krew/bin"

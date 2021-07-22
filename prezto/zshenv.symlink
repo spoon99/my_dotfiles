@@ -20,3 +20,6 @@ export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
 
 # Gradle
 export GRADLE_HOME=/usr/local/opt/gradle/libexec
+
+# PATH
+export PATH=$PATH:/Users/shkim84/bin
